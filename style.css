@@ -18,14 +18,11 @@ body {
     position: fixed; 
     top: 0; 
     bottom: 0; 
-    width: 220px;
+    width: 180px;
     background-image: url("zampette.png");
     background-repeat: repeat-y; 
-    background-size: 280px;
-    
-    /* QUESTA È LA RIGA CHE LE BLOCCA */
+    background-size: 200px; /* Dimensione più proporzionata */
     background-attachment: fixed; 
-    
     opacity: 0.1; 
     pointer-events: none; 
     z-index: -1; 
@@ -33,10 +30,12 @@ body {
 
 .paw-left { 
     left: 0; 
+    background-position: left; /* Allinea le zampe al bordo sinistro */
 }
 
 .paw-right { 
     right: 0; 
+    background-position: right; /* FORZA LE ZAMPE AD ATTACCARSI AL BORDO DESTRO */
 }
 
 /* --- HEADER E NAVIGAZIONE --- */
