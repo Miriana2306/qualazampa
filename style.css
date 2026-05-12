@@ -13,29 +13,31 @@ body {
     line-height: 1.6;
 }
 
-/* --- ZAMPETTE FISSE AI LATI (CORRETTO) --- */
-.paw-left, .paw-right {
-    position: fixed; 
-    top: 0; 
-    bottom: 0; 
-    width: 200px; /* Spazio occupato ai lati */
+/* --- SISTEMA ZAMPETTE --- */
+body::before, body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 250px; /* Larghezza della fascia laterale */
     background-image: url("zampette.png");
-    background-repeat: repeat-y; 
-    background-size: 250px; 
-    background-attachment: fixed; 
-    opacity: 0.1; 
-    pointer-events: none; 
-    z-index: -1; 
+    background-repeat: repeat-y;
+    background-size: 250px;
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
 }
 
-.paw-left { 
-    left: 0; 
-    background-position: left center; /* Le ancora a sinistra */
+/* Zampette a Sinistra */
+body::before {
+    left: 0;
+    background-position: left top;
 }
 
-.paw-right { 
-    right: 0; 
-    background-position: right center; /* LE ANCORA A DESTRA */
+/* Zampette a Destra */
+body::after {
+    right: 0;
+    background-position: right top;
 }
 
 /* --- HEADER E NAVIGAZIONE --- */
