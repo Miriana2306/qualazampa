@@ -13,18 +13,22 @@ body {
     line-height: 1.6;
 }
 
-/* --- ZAMPETTE FISSE AI LATI --- */
+/* --- ZAMPETTE FISSE AI LATI (CORRETTO) --- */
 .paw-left, .paw-right {
-    position: fixed; /* Restano visibili anche se scorri la pagina */
+    position: fixed; 
     top: 0; 
     bottom: 0; 
     width: 220px;
     background-image: url("zampette.png");
-    background-repeat: repeat-y; /* Crea la colonna di zampette dall'alto al basso */
+    background-repeat: repeat-y; 
     background-size: 280px;
-    opacity: 0.1; /* Effetto soffuso, quasi trasparente */
-    pointer-events: none; /* Impedisce che le zampette coprano i tasti cliccabili */
-    z-index: -1; /* Le mette dietro a tutto il resto */
+    
+    /* QUESTA È LA RIGA CHE LE BLOCCA */
+    background-attachment: fixed; 
+    
+    opacity: 0.1; 
+    pointer-events: none; 
+    z-index: -1; 
 }
 
 .paw-left { 
