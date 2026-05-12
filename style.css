@@ -13,46 +13,26 @@ body {
     line-height: 1.6;
 }
 
-/* --- ZAMPETTE SCORREVOLI --- */
+/* --- ZAMPETTE FISSE AI LATI --- */
 .paw-left, .paw-right {
-    position: fixed !important; /* Forza la posizione fissa */
+    position: fixed; /* Restano visibili anche se scorri la pagina */
     top: 0; 
-    left: 0;
-    right: 0;
     bottom: 0; 
     width: 220px;
-    background-image: url("zampette.png") !important;
-    background-repeat: repeat-y !important;
+    background-image: url("zampette.png");
+    background-repeat: repeat-y; /* Crea la colonna di zampette dall'alto al basso */
     background-size: 280px;
-    opacity: 0.1;
-    pointer-events: none;
-    z-index: -1; 
-    
-    /* Animazione forzata */
-    -webkit-animation: movePaws 20s linear infinite; /* Per Safari/Chrome vecchi */
-    animation: movePaws 20s linear infinite;
+    opacity: 0.1; /* Effetto soffuso, quasi trasparente */
+    pointer-events: none; /* Impedisce che le zampette coprano i tasti cliccabili */
+    z-index: -1; /* Le mette dietro a tutto il resto */
 }
 
-.paw-left { left: 0; right: auto; }
-.paw-right { right: 0; left: auto; }
-
-/* IL MOTORE DELL'ANIMAZIONE */
-@keyframes movePaws {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 0 1000px;
-    }
+.paw-left { 
+    left: 0; 
 }
 
-@-webkit-keyframes movePaws {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 0 1000px;
-    }
+.paw-right { 
+    right: 0; 
 }
 
 /* --- HEADER E NAVIGAZIONE --- */
