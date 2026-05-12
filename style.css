@@ -15,30 +15,42 @@ body {
 
 /* --- ZAMPETTE SCORREVOLI --- */
 .paw-left, .paw-right {
-    position: fixed; /* Cambiato in fixed per farle scorrere mentre navighi */
+    position: fixed !important; /* Forza la posizione fissa */
     top: 0; 
+    left: 0;
+    right: 0;
     bottom: 0; 
     width: 220px;
-    background-image: url("zampette.png");
-    background-repeat: repeat-y;
+    background-image: url("zampette.png") !important;
+    background-repeat: repeat-y !important;
     background-size: 280px;
     opacity: 0.1;
     pointer-events: none;
     z-index: -1; 
     
-    /* Questo attiva il movimento */
-    animation: movePaws 30s linear infinite;
+    /* Animazione forzata */
+    -webkit-animation: movePaws 20s linear infinite; /* Per Safari/Chrome vecchi */
+    animation: movePaws 20s linear infinite;
 }
 
-.paw-left { left: 0; }
-.paw-right { right: 0; }
+.paw-left { left: 0; right: auto; }
+.paw-right { right: 0; left: auto; }
 
-/* Questa è la regola che fa muovere lo sfondo, va messa subito sotto */
+/* IL MOTORE DELL'ANIMAZIONE */
 @keyframes movePaws {
-    from {
+    0% {
         background-position: 0 0;
     }
-    to {
+    100% {
+        background-position: 0 1000px;
+    }
+}
+
+@-webkit-keyframes movePaws {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
         background-position: 0 1000px;
     }
 }
