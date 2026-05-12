@@ -218,56 +218,7 @@ nav a { color: #ffffff; text-decoration: none; padding: 0 20px; font-weight: 600
     text-decoration: underline; /* Opzionale: la sottolineatura appare solo quando ci passi sopra */
 }
 
-/* --- RESPONSIVE DESIGN (Smartphone e Tablet piccoli) --- */
-@media (max-width: 768px) {
-    /* Layout generale */
-    .chi-siamo-box, 
-    .curiosita-razze, 
-    .hero, 
-    .foto-primo-incontro { 
-        flex-direction: column !important; 
-        text-align: center;
-    }
 
-    .container { 
-        padding: 15px; 
-        margin: 10px; 
-    }
-
-    /* Header: riduciamo l'altezza per il cellulare */
-    .parallax-header {
-        height: 250px;
-        background-attachment: scroll; /* Migliora la fluidità su mobile */
-    }
-
-    h1 {
-        font-size: 1.8rem !important;
-    }
-
-    /* Foto delle bimbe "online" */
-    .incontro-item {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-
-    /* Gallerie a scorrimento (Pandora e Macchia) */
-    .scroll-gallery img {
-        height: 180px; /* Foto leggermente più piccole per non appesantire lo schermo */
-    }
-
-    /* Footer e Crediti */
-    .credits-line {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-        padding: 20px 10px;
-    }
-
-    .cc-logo {
-        height: 20px; /* Logo CC proporzionato */
-    }
-}
 /* --- SEZIONE STATISTICHE (FINALE RAZZE) --- */
 .stats-container {
     display: flex;
@@ -578,86 +529,104 @@ html {
     padding: 0 40px;    /* Riporta il testo alla larghezza normale del sito */
 }
 
-@media (max-width: 768px) {
-    .foto-stretch {
-        margin-left: -15px; /* Allineato al padding mobile */
-        margin-right: -15px;
-        width: calc(100% + 30px);
-    }
-    
-    .assoc-container {
-        flex-direction: column; /* Il cuore e il testo si mettono uno sotto l'altro */
-        text-align: center;
-    }
-}
 
-
-/* Regole solo per Smartphone */
-@media (max-width: 768px) {
-    .parallax-header {
-        height: 40vh; /* Riduce l'altezza dell'header su cellulare */
-    }
-
-    .container {
-        width: 95%; /* Usa più spazio sui lati dello schermo piccolo */
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 2rem; /* Rimpicciolisce i titoli grandi */
-    }
-
-    /* Se le foto dei cani sono troppo piccole o grandi */
-    .foto-primo-incontro img, .storia-sezione img {
-        width: 100%; 
-        height: auto;
-    }
-}
-
-
-/* --- OTTIMIZZAZIONE PER MOBILE --- */
+/* ============================================================
+   CONFIGURAZIONE MOBILE DEFINITIVA (Unico Blocco)
+   ============================================================ */
 @media (max-width: 768px) {
     
-    /* 1. Sistemiamo il menu che si taglia */
+    /* Impedisce lo scivolamento laterale su iPhone */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Sistema il Menu: i tasti si mettono uno sotto l'altro */
     nav {
-        display: flex;
-        flex-direction: column; /* Mette i tasti uno sotto l'altro */
-        align-items: center;
-        padding: 15px 0;
-        height: auto; /* Permette alla barra di allungarsi */
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 15px 0 !important;
+        height: auto !important;
     }
 
     nav a, .dropdown .dropbtn {
-        margin: 8px 0; /* Spazia i tasti verticalmente */
-        font-size: 1.1rem;
-        width: 90%; /* Occupa quasi tutta la larghezza */
-        text-align: center;
+        margin: 8px 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 5px 0 !important;
     }
 
-    /* Sistemiamo il dropdown (Le loro storie) */
+    /* Il sottomenu (dropdown) si apre bene sotto il tasto senza coprire nulla */
     .dropdown-content {
-        position: relative; /* Lo rende parte del flusso, non sopra agli altri */
-        box-shadow: none;
-        background-color: rgba(255, 255, 255, 0.1); /* Sfondo leggero */
+        position: relative !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        left: 0 !important;
+        transform: none !important;
+        display: none;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block !important;
     }
 
-    /* 2. Sistemiamo i margini generali del contenuto */
+    /* Centra il contenitore bianco ed elimina i margini strani */
     .container {
-        width: 92% !important; /* Forza il contenitore a stare dentro lo schermo */
-        margin: 0 auto !important; /* Lo centra perfettamente */
-        padding: 15px;
-        box-sizing: border-box; /* Evita che il padding spinga fuori il bordo */
+        width: 90% !important; 
+        max-width: 90% !important;
+        margin: 20px auto !important; 
+        padding: 20px !important;
+        box-sizing: border-box !important;
+        float: none !important;
     }
 
-    /* 3. Sistemiamo le scritte nell'header */
+    /* Layout a colonna per tutti i box */
+    .chi-siamo-box, .curiosita-razze, .foto-primo-incontro, .assoc-container, .stats-container, .credits-line {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 20px !important;
+    }
+
+    /* Foto Chi Siamo e Foto Incontro */
+    .chi-siamo-foto, .chi-siamo-testo, .incontro-item {
+        width: 100% !important;
+    }
+
+    .chi-siamo-foto img, .incontro-item img {
+        height: 350px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* Header proporzionato al cellulare */
+    .parallax-header {
+        height: 300px !important;
+        background-attachment: scroll !important; /* Safari iPhone non regge bene il 'fixed' */
+    }
+
     .parallax-content h1 {
-        font-size: 2.2rem;
-        padding: 0 10px;
+        font-size: 1.8rem !important;
     }
 
-    /* 4. Footer più leggibile */
-    .footer-universitario {
-        padding: 20px 10px;
-        font-size: 0.9rem;
+    /* Foto che toccano i bordi */
+    .foto-stretch {
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        width: calc(100% + 40px) !important;
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .foto-stretch img {
+        height: 300px !important;
+    }
+
+    /* Footer: permette al testo di andare a capo se necessario */
+    .footer-dedica p {
+        white-space: normal !important;
+        font-size: 0.9rem !important;
+        padding: 0 10px;
     }
 }
