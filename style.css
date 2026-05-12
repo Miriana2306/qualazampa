@@ -590,3 +590,26 @@ html {
         text-align: center;
     }
 }
+
+
+/* Regole solo per Smartphone */
+@media (max-width: 768px) {
+    .parallax-header {
+        height: 40vh; /* Riduce l'altezza dell'header su cellulare */
+    }
+
+    .container {
+        width: 95%; /* Usa più spazio sui lati dello schermo piccolo */
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem; /* Rimpicciolisce i titoli grandi */
+    }
+
+    /* Se le foto dei cani sono troppo piccole o grandi */
+    .foto-primo-incontro img, .storia-sezione img {
+        width: 100%; 
+        height: auto;
+    }
+}
