@@ -18,10 +18,10 @@ body {
     position: fixed; 
     top: 0; 
     bottom: 0; 
-    width: 180px;
+    width: 200px; /* Spazio occupato ai lati */
     background-image: url("zampette.png");
     background-repeat: repeat-y; 
-    background-size: 200px; /* Dimensione più proporzionata */
+    background-size: 250px; 
     background-attachment: fixed; 
     opacity: 0.1; 
     pointer-events: none; 
@@ -30,12 +30,12 @@ body {
 
 .paw-left { 
     left: 0; 
-    background-position: left; /* Allinea le zampe al bordo sinistro */
+    background-position: left center; /* Le ancora a sinistra */
 }
 
 .paw-right { 
     right: 0; 
-    background-position: right; /* FORZA LE ZAMPE AD ATTACCARSI AL BORDO DESTRO */
+    background-position: right center; /* LE ANCORA A DESTRA */
 }
 
 /* --- HEADER E NAVIGAZIONE --- */
