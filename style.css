@@ -613,3 +613,51 @@ html {
         height: auto;
     }
 }
+
+
+/* --- OTTIMIZZAZIONE PER MOBILE --- */
+@media (max-width: 768px) {
+    
+    /* 1. Sistemiamo il menu che si taglia */
+    nav {
+        display: flex;
+        flex-direction: column; /* Mette i tasti uno sotto l'altro */
+        align-items: center;
+        padding: 15px 0;
+        height: auto; /* Permette alla barra di allungarsi */
+    }
+
+    nav a, .dropdown .dropbtn {
+        margin: 8px 0; /* Spazia i tasti verticalmente */
+        font-size: 1.1rem;
+        width: 90%; /* Occupa quasi tutta la larghezza */
+        text-align: center;
+    }
+
+    /* Sistemiamo il dropdown (Le loro storie) */
+    .dropdown-content {
+        position: relative; /* Lo rende parte del flusso, non sopra agli altri */
+        box-shadow: none;
+        background-color: rgba(255, 255, 255, 0.1); /* Sfondo leggero */
+    }
+
+    /* 2. Sistemiamo i margini generali del contenuto */
+    .container {
+        width: 92% !important; /* Forza il contenitore a stare dentro lo schermo */
+        margin: 0 auto !important; /* Lo centra perfettamente */
+        padding: 15px;
+        box-sizing: border-box; /* Evita che il padding spinga fuori il bordo */
+    }
+
+    /* 3. Sistemiamo le scritte nell'header */
+    .parallax-content h1 {
+        font-size: 2.2rem;
+        padding: 0 10px;
+    }
+
+    /* 4. Footer più leggibile */
+    .footer-universitario {
+        padding: 20px 10px;
+        font-size: 0.9rem;
+    }
+}
