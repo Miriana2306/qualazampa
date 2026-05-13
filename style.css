@@ -545,66 +545,67 @@ html {
 
 
 /* ============================================================
+
    CONFIGURAZIONE MOBILE DEFINITIVA (Unico Blocco)
+
    ============================================================ */
+
 @media (max-width: 768px) {
-    
-    /* Impedisce lo scivolamento laterale su iPhone */
-    html, body {
-        overflow-x: hidden !important;
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
+/* Impedisce lo scivolamento laterale su iPhone */
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
     }
 
-/* Sistema il Menu: i tasti tornano affiancati per risparmiare spazio */
-    /* Sistema il Menu: Forza l'orizzontalità stringendo i tasti */
-nav {
-        display: flex !important;
-        flex-direction: column !important; /* Torna in verticale così non sbaglia */
+
+
+/* Sistema il Menu: i tasti si mettono uno sotto l'altro */
+    nav {
+        flex-direction: column !important;
         align-items: center !important;
-        padding: 10px 0 !important;
+        padding: 15px 0 !important;
         height: auto !important;
     }
 
-nav a, .dropdown .dropbtn {
-        margin: 5px 0 !important;
+    nav a, .dropdown .dropbtn {
+        margin: 8px 0 !important;
         width: 100% !important;
         text-align: center !important;
-        padding: 8px 0 !important;
-        font-size: 1rem !important;
+        padding: 5px 0 !important;
+
     }
 
 
 
-    /* Il sottomenu (dropdown) si apre bene sotto il tasto senza coprire nulla */
- .dropdown-content {
-        position: relative !important; /* Fondamentale: torna a far parte del flusso della pagina */
+/* Il sottomenu (dropdown) si apre bene sotto il tasto senza coprire nulla */
+    .dropdown-content {
+        position: relative !important;
         width: 100% !important;
+        box-shadow: none !important;
+        left: 0 !important;
+        transform: none !important;
         display: none;
-        box-shadow: none !important; /* Rimuove l'ombra per farlo sembrare un menu semplice */
-        background-color: #fff2ef !important; /* Un colore leggermente diverso per distinguere le voci */
     }
+
     .dropdown:hover .dropdown-content {
         display: block !important;
     }
 
-    .dropdown-content a {
-        padding: 10px !important;
-        font-size: 0.9rem !important;
-    }
 
-    /* Centra il contenitore bianco ed elimina i margini strani */
+
+/* Centra il contenitore bianco ed elimina i margini strani */
     .container {
-        width: 90% !important; 
+        width: 90% !important;
         max-width: 90% !important;
-        margin: 20px auto !important; 
+        margin: 20px auto !important;
         padding: 20px !important;
         box-sizing: border-box !important;
         float: none !important;
     }
 
-    /* Layout a colonna per tutti i box */
+/* Layout a colonna per tutti i box */
     .chi-siamo-box, .curiosita-razze, .foto-primo-incontro, .assoc-container, .stats-container, .credits-line {
         flex-direction: column !important;
         align-items: center !important;
@@ -612,9 +613,9 @@ nav a, .dropdown .dropbtn {
         gap: 20px !important;
     }
 
-    /* Foto Chi Siamo e Foto Incontro */
+/* Foto Chi Siamo e Foto Incontro */
     .chi-siamo-foto, .chi-siamo-testo, .incontro-item {
-        width: 100% !important;
+     width: 100% !important;
     }
 
     .chi-siamo-foto img, .incontro-item img {
@@ -623,18 +624,19 @@ nav a, .dropdown .dropbtn {
         object-fit: cover !important;
     }
 
-    /* Header proporzionato al cellulare */
+/* Header proporzionato al cellulare */
     .parallax-header {
-        height: 200px !important; /*Da 300 a 200 per modificare l'intestazione anche sul mobile*/
-        background-position: center 20% !important; /* Regola il ritaglio anche qui */
+        height: 180px !important;
+        background-position: center 20% !important; /* Inquadra meglio le cagnoline nel nuovo spazio stretto */
         background-attachment: scroll !important; /* Safari iPhone non regge bene il 'fixed' */
     }
 
     .parallax-content h1 {
-        font-size: 1.4rem !important;
+    font-size: 1.4rem !important;
+    margin: 0 !important;
     }
 
-    /* Foto che toccano i bordi */
+/* Foto che toccano i bordi */
     .foto-stretch {
         margin-left: -20px !important;
         margin-right: -20px !important;
@@ -642,15 +644,15 @@ nav a, .dropdown .dropbtn {
         margin-top: 30px !important;
         margin-bottom: 30px !important;
     }
-
     .foto-stretch img {
         height: 300px !important;
     }
 
-    /* Footer: permette al testo di andare a capo se necessario */
+/* Footer: permette al testo di andare a capo se necessario */
     .footer-dedica p {
         white-space: normal !important;
         font-size: 0.9rem !important;
         padding: 0 10px;
     }
+
 }
