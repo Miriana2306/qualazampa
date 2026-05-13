@@ -558,19 +558,31 @@ html {
     }
 
 /* Sistema il Menu: i tasti tornano affiancati per risparmiare spazio */
-    nav {
-        flex-direction: row !important; /* Li mette uno accanto all'altro */
-        flex-wrap: wrap; /* Se non ci stanno, vanno a capo da soli */
-        justify-content: center !important;
-        padding: 10px 0 !important;
-        height: auto !important;
-    }
+    /* Sistema il Menu: Forza l'orizzontalità stringendo i tasti */
+nav {
+    flex-direction: row !important; 
+    flex-wrap: nowrap !important; /* BLOCCA il ritorno a capo visto che x il mobile è come se non ci fosse abbastanza spazio sulla lunghezza */
+    justify-content: space-around !important; /* Distribuisce i tasti sulla riga */
+    padding: 10px 0 !important;
+    height: auto !important;
+    display: flex !important;
+}
 
-    nav a, .dropdown .dropbtn {
-        margin: 5px 10px !important; /* Spazio a destra e sinistra, non sopra e sotto */
-        width: auto !important; /* Non occupano più tutta la larghezza */
-        font-size: 0.9rem !important; /* Testo leggermente più piccolo */
-    }
+nav a, .dropdown .dropbtn {
+    margin: 0 5px !important; 
+    width: auto !important; 
+    flex: 1 !important; /* Costringe ogni tasto a dividersi lo spazio */
+    font-size: 0.8rem !important; /* Testo leggermente più piccolo per farlo stare */
+    padding: 8px 0 !important;
+    text-align: center !important;
+    white-space: nowrap !important; /* Impedisce al testo di spezzarsi su due righe */
+}
+
+/* Serve a far stare il dropdown sulla stessa riga degli altri */
+.dropdown {
+    flex: 1 !important;
+    text-align: center !important;
+}
 
     /* Il sottomenu (dropdown) si apre bene sotto il tasto senza coprire nulla */
     .dropdown-content {
