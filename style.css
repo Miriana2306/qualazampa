@@ -1,4 +1,4 @@
-/* 1. RESET E IMPOSTAZIONI BASE */
+/* IMPOSTAZIONI BASE */
 html { height: 100%; }
 
 body {
@@ -43,7 +43,7 @@ body::after {
 /* --- HEADER E NAVIGAZIONE --- */
 .parallax-header {
     background-image: url("cagnoline.jpeg");
-    height: 65vh; 
+    height: 48vh; /*sto abbassando da 65 a 40 x sistemare l'intestazione*/
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,13 +62,14 @@ body::after {
     background: rgba(0, 0, 0, 0.4); 
 }
 .parallax-content { z-index: 1; padding: 0 20px; }
-.parallax-content h1 { font-size: 3rem; font-family: 'Georgia', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+.parallax-content h1 { font-size: 2.2rem; font-family: 'Georgia', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+margin:0 /*sto sistemando l'intestazione come chiesto quindi aggiungo questo per togliere spazio inutile sotto e sopr*/ }
 
 nav {
     background: #8d6e63;
     display: flex;
     justify-content: center;
-    padding: 1rem;
+    padding: 0.5rem; /*era ad 1 modifico per l'intestazione totale e diventa più elegante*/
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -85,7 +86,7 @@ nav a { color: #ffffff; text-decoration: none; padding: 0 20px; font-weight: 600
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* --- [CORREZIONE] SEZIONE CHI SIAMO (INDEX) --- */
+/* --- SEZIONE CHI SIAMO (INDEX) --- */
 .chi-siamo-box {
     display: flex;
     align-items: flex-start;
@@ -115,7 +116,7 @@ nav a { color: #ffffff; text-decoration: none; padding: 0 20px; font-weight: 600
 
 
 
-/* --- [CORREZIONE] CARD CURIOSITÀ (INDEX) --- */
+/* ---  CARD CURIOSITÀ (INDEX) --- */
 .curiosita-razze {
     display: flex;
     gap: 30px;
@@ -468,7 +469,7 @@ nav a { color: #ffffff; text-decoration: none; padding: 0 20px; font-weight: 600
 
 /* 5. Colore quando passi sopra alle singole voci (Pandora/Macchia) */
 .dropdown-content a:hover {
-    background-color: #ffccbc; /* Quel pesca chiaro che ti piace */
+    background-color: #ffccbc; /* Quel pesca chiaro che mi piace */
     color: #5d4037 !important;
 }
 
@@ -482,7 +483,7 @@ nav a { color: #ffffff; text-decoration: none; padding: 0 20px; font-weight: 600
     left: 0;
 }
 
-/* Assicurati che non ci sia spazio tra il tasto e la tendina */
+/* X assicurarmi che non ci sia spazio tra il tasto e la tendina */
 .dropdown-content {
     margin-top: 0 !important; 
     display: none;
