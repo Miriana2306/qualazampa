@@ -43,7 +43,7 @@ body::after {
 /* --- HEADER E NAVIGAZIONE --- */
 .parallax-header {
     background-image: url("cagnoline.jpeg");
-    height: 48vh; /*sto abbassando da 65 a 40 x sistemare l'intestazione*/
+    height: 48vh; /*sto abbassando da 65 a 48 x sistemare l'intestazione*/
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
