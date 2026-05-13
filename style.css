@@ -616,7 +616,8 @@ html {
 
     /* Header proporzionato al cellulare */
     .parallax-header {
-        height: 300px !important;
+        height: 250px !important; /*Da 300 a 250 per modificare l'intestazione anche sul mobile*/
+        background-position: center 20% !important; /* Regola il ritaglio anche qui */
         background-attachment: scroll !important; /* Safari iPhone non regge bene il 'fixed' */
     }
 
