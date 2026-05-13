@@ -557,19 +557,19 @@ html {
         padding: 0 !important;
     }
 
-    /* Sistema il Menu: i tasti si mettono uno sotto l'altro */
+/* Sistema il Menu: i tasti tornano affiancati per risparmiare spazio */
     nav {
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 15px 0 !important;
+        flex-direction: row !important; /* Li mette uno accanto all'altro */
+        flex-wrap: wrap; /* Se non ci stanno, vanno a capo da soli */
+        justify-content: center !important;
+        padding: 10px 0 !important;
         height: auto !important;
     }
 
     nav a, .dropdown .dropbtn {
-        margin: 8px 0 !important;
-        width: 100% !important;
-        text-align: center !important;
-        padding: 5px 0 !important;
+        margin: 5px 10px !important; /* Spazio a destra e sinistra, non sopra e sotto */
+        width: auto !important; /* Non occupano più tutta la larghezza */
+        font-size: 0.9rem !important; /* Testo leggermente più piccolo */
     }
 
     /* Il sottomenu (dropdown) si apre bene sotto il tasto senza coprire nulla */
@@ -616,13 +616,13 @@ html {
 
     /* Header proporzionato al cellulare */
     .parallax-header {
-        height: 250px !important; /*Da 300 a 250 per modificare l'intestazione anche sul mobile*/
+        height: 200px !important; /*Da 300 a 200 per modificare l'intestazione anche sul mobile*/
         background-position: center 20% !important; /* Regola il ritaglio anche qui */
         background-attachment: scroll !important; /* Safari iPhone non regge bene il 'fixed' */
     }
 
     .parallax-content h1 {
-        font-size: 1.8rem !important;
+        font-size: 1.4rem !important;
     }
 
     /* Foto che toccano i bordi */
